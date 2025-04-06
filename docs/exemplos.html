@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplos - Charcot</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <h1>Exemplos da Linguagem Charcot</h1>
+    </header>
+    
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Charcot</a>
+            <ul class="nav-links">
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="documentacao.html">Documentação</a></li>
+                <li><a href="exemplos.html">Exemplos</a></li>
+                <li><a href="playground.html">Playground</a></li>
+                <li><a href="comunidade.html">Comunidade</a></li>
+                <li><a href="instalacao.html">Instalar</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main>
+        <section>
+            <h2 class="section-title">Exemplos da Linguagem Charcot</h2>
+            <p>Esta página contém exemplos práticos de código Charcot para diversas aplicações médicas.</p>
+            
+            <div class="tabs">
+                <div class="tab active">Calculadora de IMC</div>
+                <div class="tab">Prescrição Médica</div>
+                <div class="tab">Monitoramento de Sinais Vitais</div>
+                <div class="tab">Integração FHIR</div>
+            </div>
+            
+            <div class="tab-content active">
+                <h3>Calculadora de IMC</h3>
+                <p>Este exemplo demonstra como criar uma calculadora de Índice de Massa Corporal (IMC) com verificações de tipo seguras.</p>
+                
+                <div class="codeblock-header">calculadora_imc.chc</div>
+                <pre><code><span class="comment">// Calculadora de IMC em Charcot</span>
+<span class="keyword">usar</span> paciente::dados_antropometricos;
+
+<span class="comment">// Tipos com verificação integrada</span>
+<span class="keyword">tipo</span> <span class="type">Peso</span> = <span class="type">Decimal</span>&lt;0.1..635.0, <span class="string">"kg"</span>&gt;; <span class="comment">// Intervalo válido com unidade</span>
+<span class="keyword">tipo</span> <span class="type">Altura</span> = <span class="type">Decimal</span>&lt;0.3..2.5, <span class="string">"m"</span>&gt;;
+<span class="keyword">tipo</span> <span class="type">IMC</span> = <span class="type">Decimal</span>&lt;10.0..70.0, <span class="string">"kg/m²"</span>&gt;;
+
+<span class="comment">// Enumeração para classificação</span>
+<span class="keyword">enum</span> <span class="type">ClassificacaoIMC</span> {
+    BaixoPeso,
+    PesoNormal,
+    Sobrepeso,
+    Obesidade1,
+    Obesidade2,
+    Obesidade3,
+}
+
+<span class="comment">// Função com tipos validados</span>
+<span class="keyword">func</span> <span class="function">calcular_imc</span>(peso: <span class="type">Peso</span>, altura: <span class="type">Altura</span>) -> <span class="type">IMC</span> {
+    <span class="comment">// Não é necessário validar entradas - o sistema de tipos garante valores válidos</span>
+    <span class="keyword">let</span> imc_valor = peso.valor() / (altura.valor() * altura.valor());
+    <span class="type">IMC</span>::novo(arredondar(imc_valor, 1))
+}
+
+<span class="keyword">func</span> <span class="function">principal</span>() {
+    <span class="keyword">let</span> peso = <span class="type">Peso</span>::novo(70.5);
+    <span class="keyword">let</span> altura = <span class="type">Altura</span>::novo(1.75);
+    
+    <span class="keyword">let</span> imc = calcular_imc(peso, altura);
+    imprimir(f<span class="string">"IMC: {imc}"</span>);
+}</code></pre>
+
+                <p>Execute este código com:</p>
+                <div class="codeblock-header">Terminal</div>
+                <pre><code>charcot executar calculadora_imc.chc</code></pre>
+            </div>
+            
+            <!-- Mais exemplos seriam adicionados nas outras abas -->
+        </section>
+    </mai>
+    
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Projeto Charcot. Todos os direitos reservados.</p>
+            <p><a href="https://github.com/charcot-lang">GitHub</a> | <a href="https://forum.charcot-lang.org">Fórum</a> | <a href="https://discord.gg/charcot">Discord</a></p>
+        </div>
+    </footer>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>n
