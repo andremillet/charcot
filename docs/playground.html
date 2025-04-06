@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playground - Charcot</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <h1>Playground Charcot</h1>
+    </header>
+    
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Charcot</a>
+            <ul class="nav-links">
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="documentacao.html">Documentação</a></li>
+                <li><a href="exemplos.html">Exemplos</a></li>
+                <li><a href="playground.html">Playground</a></li>
+                <li><a href="comunidade.html">Comunidade</a></li>
+                <li><a href="instalacao.html">Instalar</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="playground-header">
+            <div class="playground-title">
+                Experimente Charcot no navegador
+            </div>
+            <div class="playground-actions">
+                <div class="examples-dropdown">
+                    <button class="btn btn-secondary">Exemplos</button>
+                    <div class="examples-dropdown-content">
+                        <a href="#" onclick="loadExample('hello-world')">Hello World</a>
+                        <a href="#" onclick="loadExample('imc-calculator')">Calculadora de IMC</a>
+                        <a href="#" onclick="loadExample('medical-types')">Tipos Médicos</a>
+                        <a href="#" onclick="loadExample('medication-interaction')">Interação Medicamentosa</a>
+                        <a href="#" onclick="loadExample('fhir-patient')">Paciente FHIR</a>
+                        <a href="#" onclick="loadExample('vital-signs')">Monitoramento de Sinais Vitais</a>
+                        <a href="#" onclick="loadExample('patient-admission')">Internação de Paciente</a>
+                        <a href="#" onclick="loadExample('prescription')">Prescrição Médica</a>
+                    </div>
+                </div>
+                <button class="btn btn-primary" onclick="runCode()">Executar ▶</button>
+                <button class="btn btn-secondary" onclick="shareCode()">Compartilhar</button>
+                <button class="btn btn-secondary" onclick="downloadCode()">Download</button>
+                <button class="btn btn-danger" onclick="clearCode()">Limpar</button>
+            </div>
+        </div>
+        
+        <div class="playground-main">
+            <div class="editor-container">
+                <div class="editor-header">
+                    <div class="tabs">
+                        <div class="tab active">principal.chc <span class="tab-close">×</span></div>
+                        <div class="tab">paciente.chc <span class="tab-close">×</span></div>
+                        <div class="tab">+ Novo arquivo</div>
+                    </div>
+                    <div class="editor-actions">
+                        <button title="Aumentar fonte">A+</button>
+                        <button title="Diminuir fonte">A-</button>
+                        <button title="Formatação automática">{ }</button>
+                    </div>
+                </div>
+                <div class="editor-with-numbers">
+                    <div class="editor-line-numbers">
+                        1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20
+                    </div>
+                    <textarea id="editor" class="editor">// Bem-vindo ao Playground Charcot!
+// Experimente a primeira linguagem de programação 
+// projetada especificamente para aplicações médicas.
+
+usar paciente;
+usar medicacao;
+
+func principal() {
+    imprimir("Olá, mundo médico!");
+    
+    // Criar um paciente
+    let paciente = Paciente::novo(
+        "P12345",
+        "João",
+        "Silva",
+        Data::de("1980-05-15"),
+        Genero::Masculino
+    );
+    
+    imprimir(f"Paciente: {paciente.nome_completo()}");
+    imprimir(f"Idade: {paciente.idade()} anos");
+}
+</textarea>
+                </div>
+            </div>
+            
+            <div class="output-container">
+                <div class="output-header">
+                    <div class="output-title">Saída</div>
+                    <div class="output-tabs">
+                        <div class="output-tab active">Console</div>
+                        <div class="output-tab">Compilação</div>
+                        <div class="output-tab">REPL</div>
+                    </div>
+                </div>
+                <pre id="output" class="output">// A saída aparecerá aqui quando você executar o código
+// Clique no botão "Executar" para testar seu código
+
+<span class="output-info">// Dica: Explore os exemplos no menu "Exemplos" para ver 
+// recursos específicos da linguagem Charcot para medicina</span></pre>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            <p>Playground Charcot v0.1.0 | <a href="documentacao.html">Documentação</a> | <a href="https://github.com/charcot-lang/charcot">GitHub</a></p>
+            <p>Esta é uma versão simplificada para demonstração. Para recursos completos, <a href="instalacao.html">instale Charcot</a> em seu sistema.</p>
+        </div>
+    </footer>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>
