@@ -1,0 +1,137 @@
+// Arquivo: prescrever_hipertensao.charcot
+// Programa para prescrever medicação para hipertensão
+
+// Importação de módulos médicos
+import medical.patient_module;
+import medical.pharmacy;
+import medical.protocols.hypertension;
+
+// Declaração de um paciente
+patient p : Patient {
+    id: "123456",
+    name: "João Silva",
+    birth: 1980-05-15,
+    weight: 75.5kg,
+    height: 175cm,
+    allergies: ["penicilina", "sulfas"]
+};
+
+// Declaração de variáveis vitais
+blood_pressure : mmHg = 150/95;
+heart_rate : bpm = 78;
+glucose : mg/dL = 95;
+
+// Função principal para prescrever medicamento
+procedure main() {
+    // Verificar nível de hipertensão
+    if (blood_pressure > 140/90mmHg) {
+        diagnose(p, "Hipertensão Estágio 1");
+        
+        // Escolha do medicamento baseado nas condições do paciente
+        clinical_path p.allergies {
+            case "enalapril":
+                prescribe_alternative(p);
+            default:
+                prescribe_first_line(p);
+        }
+    } else {
+        diagnose(p, "Pressão arterial normal");
+        recommend_lifestyle_changes(p);
+    }
+    
+    // Agendar acompanhamento
+    schedule_followup(p, 30days);
+}
+
+// Procedimento para prescrever medicamento de primeira linha
+procedure prescribe_first_line(patient p) {
+    // Verificações de segurança
+    verify_interaction(p.current_medications, "enalapril");
+    verify_allergies(p.allergies, "enalapril");
+    
+    // Se for diabético, usar inibidor da ECA
+    if (p.has_condition("diabetes") || glucose > 126mg/dL) {
+        // Prescrever Enalapril
+        prescribe(
+            p,
+            "Enalapril",
+            10mg,
+            "1 comprimido via oral, 1x ao dia",
+            30days
+        );
+        
+        // Monitorar função renal
+        order_lab_test(p, "creatinina");
+    } else {
+        // Prescrever Hidroclorotiazida
+        prescribe(
+            p,
+            "Hidroclorotiazida",
+            25mg,
+            "1 comprimido via oral pela manhã",
+            30days
+        );
+        
+        // Monitorar eletrólitos
+        order_lab_test(p, "potássio");
+    }
+    
+    // Registrar no histórico
+    document_in_record(p, "Iniciado tratamento para hipertensão");
+}
+
+// Procedimento para prescrever medicamento alternativo
+procedure prescribe_alternative(patient p) {
+    // Verificações de segurança
+    verify_interaction(p.current_medications, "amlodipina");
+    verify_allergies(p.allergies, "amlodipina");
+    
+    // Prescrever Amlodipina (bloqueador de canal de cálcio)
+    prescribe(
+        p,
+        "Amlodipina",
+        5mg,
+        "1 comprimido via oral, 1x ao dia",
+        30days
+    );
+    
+    // Alertar sobre efeitos colaterais
+    patient_education(
+        p, 
+        "Possível edema nos tornozelos. Relatar se ocorrer."
+    );
+    
+    // Registrar no histórico
+    document_in_record(p, "Iniciado tratamento alternativo para hipertensão");
+}
+
+// Procedimento para recomendações de estilo de vida
+procedure recommend_lifestyle_changes(patient p) {
+    // Criar plano de cuidados
+    care_plan cp : CarePlan = new CarePlan(p, "Controle de Pressão Arterial");
+    
+    // Adicionar recomendações ao plano
+    cp.add_recommendation("Reduzir consumo de sal para menos de 5g por dia");
+    cp.add_recommendation("Praticar atividade física por 30 minutos, 5x por semana");
+    cp.add_recommendation("Manter dieta rica em frutas e vegetais");
+    cp.add_recommendation("Monitorar pressão arterial semanalmente");
+    
+    // Entregar plano ao paciente
+    deliver_care_plan(p, cp);
+    
+    // Registrar no histórico
+    document_in_record(p, "Fornecidas orientações para controle de pressão arterial");
+}
+
+// Agendar acompanhamento
+procedure schedule_followup(patient p, duration time) {
+    appointment : Appointment = new Appointment {
+        patient: p,
+        purpose: "Reavaliação de hipertensão",
+        duration: 20minutes,
+        when: today() + time
+    };
+    
+    schedule(appointment);
+    send_reminder(p, appointment, 2days before);
+}

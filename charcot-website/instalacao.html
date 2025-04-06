@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instalação - Charcot</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <h1>Instalação do Charcot</h1>
+    </header>
+    
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Charcot</a>
+            <ul class="nav-links">
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="documentacao.html">Documentação</a></li>
+                <li><a href="exemplos.html">Exemplos</a></li>
+                <li><a href="playground.html">Playground</a></li>
+                <li><a href="comunidade.html">Comunidade</a></li>
+                <li><a href="instalacao.html">Instalar</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="main-container">
+        <div class="content">
+            <h2>Instalando o Charcot</h2>
+            
+            <p>Esta página descreve como instalar o compilador Charcot, suas bibliotecas padrão e ferramentas de desenvolvimento em seu sistema.</p>
+            
+            <div class="alert alert-info">
+                <strong>Nota:</strong> Charcot está atualmente na versão 0.1.0 (Preview). O processo de instalação e ferramentas podem mudar antes da versão estável 1.0.
+            </div>
+            
+            <h3>Requisitos do Sistema</h3>
+            
+            <div class="system-requirements">
+                <div class="requirement">
+                    <div class="requirement-label">Sistema Operacional:</div>
+                    <div class="requirement-value">
+                        <div class="supported">Windows 10/11</div>
+                        <div class="supported">macOS 10.15+</div>
+                        <div class="supported">Linux (kernel 5.4+)</div>
+                    </div>
+                </div>
+                <div class="requirement">
+                    <div class="requirement-label">Memória:</div>
+                    <div class="requirement-value">Mínimo 4GB RAM, recomendado 8GB para projetos maiores</div>
+                </div>
+                <div class="requirement">
+                    <div class="requirement-label">Espaço em Disco:</div>
+                    <div class="requirement-value">500MB para instalação básica</div>
+                </div>
+                <div class="requirement">
+                    <div class="requirement-label">Conexão Internet:</div>
+                    <div class="requirement-value">Necessária para download e gerenciamento de pacotes</div>
+                </div>
+            </div>
+            
+            <div class="tabs">
+                <div class="tab active">Instalação Rápida</div>
+                <div class="tab">Instalação Manual</div>
+                <div class="tab">Docker</div>
+            </div>
+            
+            <div class="tab-content active">
+                <p>A maneira mais simples de instalar Charcot é usar o instalador automático, que configurará tudo o que você precisa em apenas um comando.</p>
+                
+                <h4>Linux e macOS</h4>
+                <div class="codeblock-header">Terminal</div>
+                <pre><code>curl -sSf https://charcot-lang.org/instalador | sh</code></pre>
+                
+                <h4>Windows (PowerShell)</h4>
+                <div class="codeblock-header">PowerShell</div>
+                <pre><code>iwr -useb https://charcot-lang.org/instalador.ps1 | iex</code></pre>
+                
+                <p>O instalador configurará:</p>
+                <ul>
+                    <li>O compilador Charcot</li>
+                    <li>A ferramenta de linha de comando <code>charcot</code></li>
+                    <li>O gerenciador de pacotes integrado</li>
+                    <li>Bibliotecas padrão para medicina</li>
+                    <li>Integração com o shell (completar com tab, etc.)</li>
+                </ul>
+                
+                <div class="alert alert-warning">
+                    <strong>Importante:</strong> Em alguns sistemas, você pode precisar reiniciar o terminal ou adicionar manualmente o diretório de binários Charcot ao seu PATH.
+                </div>
+                
+                <h4>Verificando a Instalação</h4>
+                <p>Após a instalação, verifique se tudo está funcionando corretamente:</p>
+                <div class="codeblock-header">Terminal</div>
+                <pre><code>charcot --versao</code></pre>
+                
+                <p>Você deve ver uma saída semelhante a:</p>
+                <pre><code>Charcot v0.1.0 (compilador 0.1.0, bibliotecas padrão 0.1.0)</code></pre>
+            </div>
+            
+            <div class="tab-content">
+                <p>Você também pode baixar e instalar o Charcot manualmente, o que é útil para sistemas offline ou com requisitos específicos.</p>
+                
+                <h4>1. Baixar o Pacote</h4>
+                
+                <div class="download-options">
+                    <div class="download-option">
+                        <h4>
+                            <span class="download-option-icon">🪟</span>
+                            Windows
+                        </h4>
+                        <p>Instalador para sistemas Windows 10 e 11 (x64)</p>
+                        <div class="download-links">
+                            <a href="#" class="download-link">charcot-0.1.0-win-x64.exe</a>
+                            <a href="#" class="download-link">.zip</a>
+                        </div>
+                    </div>
+                    <div class="download-option">
+                        <h4>
+                            <span class="download-option-icon">🍎</span>
+                            macOS
+                        </h4>
+                        <p>Instalador para macOS 10.15+ (Intel e Apple Silicon)</p>
+                        <div class="download-links">
+                            <a href="#" class="download-link">charcot-0.1.0-macos-x64.pkg</a>
+                            <a href="#" class="download-link">charcot-0.1.0-macos-arm64.pkg</a>
+                            <a href="#" class="download-link">.tar.gz</a>
+                        </div>
+                    </div>
+                    <div class="download-option">
+                        <h4>
+                            <span class="download-option-icon">🐧</span>
+                            Linux
+                        </h4>
+                        <p>Pacotes para distribuições Linux populares</p>
+                        <div class="download-links">
+                            <a href="#" class="download-link">.deb (Debian/Ubuntu)</a>
+                            <a href="#" class="download-link">.rpm (RHEL/Fedora)</a>
+                            <a href="#" class="download-link">.tar.gz</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <h4>2. Instruções de Instalação</h4>
+                
+                <div class="tabs" style="margin-top: 1rem;">
+                    <div class="tab active">Windows</div>
+                    <div class="tab">macOS</div>
+                    <div class="tab">Linux</div>
+                </div>
+                
+                <div class="tab-content active">
+                    <ol>
+                        <li>Execute o instalador <code>charcot-0.1.0-win-x64.exe</code></li>
+                        <li>Siga as instruções do assistente de instalação</li>
+                        <li>Opcionalmente, adicione Charcot ao PATH do sistema</li>
+                        <li>Abra um novo prompt de comando ou PowerShell e execute <code>charcot --versao</code> para verificar a instalação</li>
+                    </ol>
+                    
+                    <div class="alert alert-info">
+                        <strong>Dica:</strong> Se preferir, você pode baixar o arquivo .zip, extraí-lo para um diretório e adicionar manualmente esse diretório ao PATH do sistema.
+                    </div>
+                </div>
+                
+                <div class="tab-content">
+                    <ol>
+                        <li>Abra o arquivo .pkg baixado</li>
+                        <li>Siga as instruções do instalador</li>
+                        <li>O instalador adicionará automaticamente o Charcot ao PATH</li>
+                        <li>Abra um novo Terminal e execute <code>charcot --versao</code> para verificar a instalação</li>
+                    </ol>
+                    
+                    <div class="alert alert-info">
+                        <strong>Usuários de Apple Silicon:</strong> Certifique-se de baixar a versão arm64 para melhor performance em Macs com chip M1/M2/M3.
+                    </div>
+                </div>
+                
+                <div class="tab-content">
+                    <h5>Debian/Ubuntu</h5>
+                    <div class="codeblock-header">Terminal</div>
+                    <pre><code>sudo dpkg -i charcot-0.1.0-amd64.deb
+sudo apt-get install -f # Resolve dependências se necessário</code></pre>
+                    
+                    <h5>RHEL/Fedora</h5>
+                    <div class="codeblock-header">Terminal</div>
+                    <pre><code>sudo rpm -i charcot-0.1.0-x86_64.rpm</code></pre>
+                    
+                    <h5>Arquivo tar.gz (qualquer distribuição)</h5>
+                    <div class="codeblock-header">Terminal</div>
+                    <pre><code>tar -xzf charcot-0.1.0-linux-x86_64.tar.gz
+cd charcot-0.1.0
+./install.sh</code></pre>
+                    
+                    <div class="alert alert-info">
+                        <strong>Nota:</strong> Você pode precisar adicionar <code>~/.charcot/bin</code> ao seu PATH manualmente no seu arquivo <code>.bashrc</code> ou <code>.zshrc</code>.
+                    </div>
+                </div>
+                
+                <h4>3. Bibliotecas e Componentes Opcionais</h4>
+                
+                <p>Além do compilador básico, você pode instalar os seguintes componentes opcionais:</p>
+                
+                <ul>
+                    <li><strong>IDE Charcot:</strong> Ambiente de desenvolvimento integrado específico para medicina</li>
+                    <li><strong>Bibliotecas de Terminologia:</strong> SNOMED CT, CID-10, LOINC e outras terminologias médicas</li>
+                    <li><strong>Conectores FHIR:</strong> Ferramentas avançadas para integração com servidores FHIR</li>
+                </ul>
+                
+                <div class="codeblock-header">Terminal</div>
+                <pre><code>charcot instalar componente ide
+charcot instalar componente terminologias
+charcot instalar componente fhir-conectores</code></pre>
+            </div>
+            
+            <div class="tab-content">
+                <p>Charcot está disponível como imagem Docker, facilitando seu uso em ambientes de CI/CD ou desenvolvimento em contêineres.</p>
+                
+                <h4>Imagem Oficial</h4>
+                <div class="codeblock-header">Terminal</div>
+                <pre><code>docker pull charcot/charcot:0.1.0</code></pre>
+                
+                <h4>Uso Básico</h4>
+                <div class="codeblock-header">Terminal</div>
+                <pre><code>docker run -it --rm -v $(pwd):/app charcot/charcot:0.1.0 charcot --versao</code></pre>
+                
+                <h4>Compilar um Projeto</h4>
+                <div class="codeblock-header">Terminal</div>
+                <pre><code>docker run -it --rm -v $(pwd):/app charcot/charcot:0.1.0 charcot compilar</code></pre>
+                
+                <h4>Docker Compose</h4>
+                <p>Para desenvolvimento contínuo, crie um arquivo <code>docker-compose.yml</code>:</p>
+                <div class="codeblock-header">docker-compose.yml</div>
+                <pre><code>version: '3'
+services:
+  charcot:
+    image: charcot/charcot:0.1.0
+    volumes:
+      - .:/app
+    working_dir: /app
+    command: charcot compilar --observar</code></pre>
+                
+                <p>Execute com:</p>
+                <div class="codeblock-header">Terminal</div>
+                <pre><code>docker-compose up</code></pre>
+                
+                <h4>Imagens Disponíveis</h4>
+                <ul>
+                    <li><code>charcot/charcot:0.1.0</code> - Versão estável mais recente</li>
+                    <li><code>charcot/charcot:latest</code> - Última versão estável</li>
+                    <li><code>charcot/charcot:nightly</code> - Versão de desenvolvimento mais recente</li>
+                    <li><code>charcot/charcot:0.1.0-slim</code> - Versão mínima sem ferramentas extras</li>
+                </ul>
+            </div>
+            
+            <h3>Após a Instalação</h3>
+            
+            <p>Depois de instalar o Charcot, você pode começar a usá-lo imediatamente:</p>
+            
+            <ol class="steps">
+                <li class="step">
+                    <h4>Criar um Novo Projeto</h4>
+                    <div class="codeblock-header">Terminal</div>
+                    <pre><code>charcot novo meu-primeiro-projeto
+cd meu-primeiro-projeto</code></pre>
+                    <p>Isso criará um novo projeto com a estrutura básica e um arquivo <code>charcot.toml</code> de configuração.</p>
+                </li>
+                <li class="step">
+                    <h4>Executar o Projeto</h4>
+                    <div class="codeblock-header">Terminal</div>
+                    <pre><code>charcot executar</code></pre>
+                    <p>Isso compilará e executará o arquivo <code>src/principal.chc</code>.</p>
+                </li>
+                <li class="step">
+                    <h4>Explorar o REPL Médico</h4>
+                    <div class="codeblock-header">Terminal</div>
+                    <pre><code>charcot repl</code></pre>
+                    <p>Isso iniciará o ambiente interativo (REPL) do Charcot, onde você pode experimentar com código e APIs médicas.</p>
+                </li>
+                <li class="step">
+                    <h4>Compilar para Produção</h4>
+                    <div class="codeblock-header">Terminal</div>
+                    <pre><code>charcot compilar --otimizar</code></pre>
+                    <p>Isso gerará um executável otimizado do seu projeto.</p>
+                </li>
+            </ol>
+            
+            <h3>Estrutura de Diretório Padrão</h3>
+            
+            <p>Um projeto Charcot típico tem a seguinte estrutura:</p>
+            
+            <div class="codeblock-header">Estrutura de Diretórios</div>
+            <pre><code>meu-projeto/
+├── charcot.toml         # Configuração do projeto
+├── src/
+│   ├── principal.chc    # Ponto de entrada principal
+│   ├── pacientes/       # Módulo de pacientes
+│   ├── medicacoes/      # Módulo de medicações
+│   └── prescrições/     # Módulo de prescrições
+├── testes/              # Testes automatizados
+│   ├── testes_pacientes.chc
+│   └── testes_medicacoes.chc
+└── recursos/            # Recursos (terminologias, etc.)
+    └── cid10.json       # Dados de terminologia</code></pre>
+            
+            <h3>Configuração do Editor</h3>
+            
+            <p>Para uma melhor experiência de desenvolvimento, configure seu editor favorito:</p>
+            
+            <div class="tabs" style="margin-top: 1rem;">
+                <div class="tab active">VS Code</div>
+                <div class="tab">JetBrains IDEs</div>
+                <div class="tab">Vim/Neovim</div>
+            </div>
+            
+            <div class="tab-content active">
+                <p>Instale a extensão Charcot para Visual Studio Code:</p>
+                
+                <ol>
+                    <li>Abra o VS Code</li>
+                    <li>Vá para a aba de extensões (Ctrl+Shift+X / Cmd+Shift+X)</li>
+                    <li>Pesquise por "Charcot"</li>
+                    <li>Instale a extensão "Charcot Language Support"</li>
+                </ol>
+                
+                <p>Ou instale via linha de comando:</p>
+                <div class="codeblock-header">Terminal</div>
+                <pre><code>code --install-extension charcot-lang.charcot-vscode</code></pre>
+                
+                <p>A extensão fornece:</p>
+                <ul>
+                    <li>Syntax highlighting</li>
+                    <li>Autocomplete inteligente para APIs médicas</li>
+                    <li>Verificação de erros em tempo real</li>
+                    <li>Integração com o compilador Charcot</li>
+                    <li>Snippets para padrões comuns de medicina</li>
+                </ul>
+            </div>
+            
+            <div class="tab-content">
+                <p>Para IDEs da JetBrains (IntelliJ IDEA, CLion, etc.):</p>
+                
+                <ol>
+                    <li>Abra a IDE</li>
+                    <li>Vá para File > Settings > Plugins (Ctrl+Alt+S)</li>
+                    <li>Clique em "Marketplace" e pesquise por "Charcot"</li>
+                    <li>Instale o plugin "Charcot Language Support"</li>
+                </ol>
+                
+                <p>O plugin fornece:</p>
+                <ul>
+                    <li>Syntax highlighting</li>
+                    <li>Autocomplete para APIs médicas</li>
+                    <li>Navegação código-fonte inteligente</li>
+                    <li>Refatoração específica para medicina</li>
+                    <li>Integração com ferramentas de build</li>
+                </ul>
+            </div>
+            
+            <div class="tab-content">
+                <p>Para Vim/Neovim:</p>
+                
+                <p>1. Instale o plugin de sintaxe Charcot via seu gerenciador de plugins favorito:</p>
+                
+                <p>Usando vim-plug:</p>
+                <div class="codeblock-header">~/.vimrc ou ~/.config/nvim/init.vim</div>
+                <pre><code>Plug 'charcot-lang/vim-charcot'</code></pre>
+                
+                <p>Usando Packer (Neovim):</p>
+                <div class="codeblock-header">~/.config/nvim/lua/plugins.lua</div>
+                <pre><code>use 'charcot-lang/vim-charcot'</code></pre>
+                
+                <p>2. Para autocomplete e verificação de erros, instale coc.nvim e o servidor de linguagem Charcot:</p>
+                
+                <div class="codeblock-header">Terminal</div>
+                <pre><code>npm install -g charcot-language-server</code></pre>
+                
+                <div class="codeblock-header">~/.vimrc ou ~/.config/nvim/init.vim</div>
+                <pre><code>Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" Em suas configurações do coc:
+let g:coc_global_extensions = ['coc-charcot']</code></pre>
+            </div>
+            
+            <h3>Solução de Problemas</h3>
+            
+            <div class="alert alert-warning">
+                <strong>Problema:</strong> Comando 'charcot' não encontrado após a instalação.
+                <br>
+                <strong>Solução:</strong> Verifique se o diretório de instalação está no PATH do sistema. Tipicamente:
+                <ul>
+                    <li>Windows: Adicione <code>C:\Program Files\Charcot\bin</code> ao PATH</li>
+                    <li>macOS/Linux: Adicione <code>~/.charcot/bin</code> ao PATH</li>
+                </ul>
+            </div>
+            
+            <div class="alert alert-warning">
+                <strong>Problema:</strong> Erro ao compilar: "Biblioteca padrão médica não encontrada".
+                <br>
+                <strong>Solução:</strong> Instale as bibliotecas padrão:
+                <div class="codeblock-header">Terminal</div>
+                <pre><code>charcot instalar std-medica</code></pre>
+            </div>
+            
+            <div class="alert alert-warning">
+                <strong>Problema:</strong> Erro de permissão durante a instalação em sistemas Unix.
+                <br>
+                <strong>Solução:</strong> Execute o instalador com permissões de administrador:
+                <div class="codeblock-header">Terminal</div>
+                <pre><code>sudo curl -sSf https://charcot-lang.org/instalador | sh</code></pre>
+            </div>
+            
+            <h3>Próximos Passos</h3>
+            
+            <p>Agora que você instalou o Charcot, recomendamos:</p>
+            
+            <ol>
+                <li>Completar o <a href="primeiros-passos.html">tutorial de primeiros passos</a></li>
+                <li>Explorar os <a href="exemplos.html">exemplos práticos</a> de aplicações médicas</li>
+                <li>Familiarizar-se com o <a href="tipos-medicos.html">sistema de tipos médicos</a></li>
+            </ol>
+            
+            <a href="primeiros-passos.html" class="btn btn-primary">Continuar para Primeiros Passos</a>
+            
+            <div class="pagination">
+                <div>
+                    <a href="documentacao.html">← Documentação</a>
+                </div>
+                <div>
+                    <a href="primeiros-passos.html">Primeiros Passos →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Projeto Charcot. Todos os direitos reservados.</p>
+            <p><a href="https://github.com/charcot-lang">GitHub</a> | <a href="https://forum.charcot-lang.org">Fórum</a> | <a href="https://discord.gg/charcot">Discord</a></p>
+        </div>
+    </footer>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>

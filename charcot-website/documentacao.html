@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentação - Charcot</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <h1>Documentação da Linguagem Charcot</h1>
+    </header>
+    
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Charcot</a>
+            <ul class="nav-links">
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="documentacao.html">Documentação</a></li>
+                <li><a href="exemplos.html">Exemplos</a></li>
+                <li><a href="playground.html">Playground</a></li>
+                <li><a href="comunidade.html">Comunidade</a></li>
+                <li><a href="instalacao.html">Instalar</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="docs-container">
+        <aside class="sidebar">
+            <div class="docs-search">
+                <input type="text" placeholder="Buscar na documentação...">
+            </div>
+            
+            <div class="sidebar-section">
+                <h3>Introdução</h3>
+                <ul class="sidebar-nav">
+                    <li class="sidebar-nav-item">
+                        <a href="index.html">← Voltar para o Início</a>
+                </div>
+                <div>
+                    <a href="instalacao.html">Instalação →</a>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Projeto Charcot. Todos os direitos reservados.</p>
+            <p><a href="https://github.com/charcot-lang">GitHub</a> | <a href="https://forum.charcot-lang.org">Fórum</a> | <a href="https://discord.gg/charcot">Discord</a></p>
+        </div>
+    </footer>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>="#introducao" class="sidebar-nav-link active">Visão Geral</a>
+                    </li>
+                    <li class="sidebar-nav-item">
+                        <a href="instalacao.html" class="sidebar-nav-link">Instalação</a>
+                    </li>
+                    <li class="sidebar-nav-item">
+                        <a href="primeiros-passos.html" class="sidebar-nav-link">Primeiros Passos</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3>Fundamentos</h3>
+                <ul class="sidebar-nav">
+                    <li class="sidebar-nav-item">
+                        <a href="sintaxe.html" class="sidebar-nav-link">Sintaxe Básica</a>
+                    </li>
+                    <li class="sidebar-nav-item">
+                        <a href="tipos.html" class="sidebar-nav-link">Sistema de Tipos</a>
+                    </li>
+                    <li class="sidebar-nav-item">
+                        <a href="funcoes.html" class="sidebar-nav-link">Funções</a>
+                    </li>
+                    <li class="sidebar-nav-item">
+                        <a href="controle-fluxo.html" class="sidebar-nav-link">Estruturas de Controle</a>
+                    </li>
+                    <li class="sidebar-nav-item">
+                        <a href="modulos.html" class="sidebar-nav-link">Módulos e Pacotes</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3>Sistema de Tipos Médicos</h3>
+                <ul class="sidebar-nav">
+                    <li class="sidebar-nav-item">
+                        <a href="tipos-medicos.html" class="sidebar-nav-link">Tipos Médicos Básicos</a>
+                    </li>
+                    <li class="sidebar-nav-item">
+                        <a href="unidades-medidas.html" class="sidebar-nav-link">Unidades e Medidas</a>
+                    </li>
+                    <li class="sidebar-nav-item">
+                        <a href="intervalos-validos.html" class="sidebar-nav-link">Intervalos Válidos</a>
+                    </li>
+                    <li class="sidebar-nav-item">
+                        <a href="tipos-dependentes.html" class="sidebar-nav-link">Tipos Dependentes</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3>Padrões Médicos</h3>
+                <ul class="sidebar-nav">
+                    <li class="sidebar-nav-item">
+                        <a href="fhir.html" class="sidebar-nav-link">Integração FHIR</a>
+                    </li>
+                    <li class="sidebar-nav-item">
+                        <a href="hl7.html" class="sidebar-nav-link">HL7</a>
+                    </li>
+                    <li class="sidebar-nav-item">
+                        <a href="terminologias.html" class="sidebar-nav-link">Terminologias Médicas</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3>Segurança</h3>
+                <ul class="sidebar-nav">
+                    <li class="sidebar-nav-item">
+                        <a href="verificacao-estatica.html" class="sidebar-nav-link">Verificação Estática</a>
+                    </li>
+                    <li class="sidebar-nav-item">
+                        <a href="permissoes.html" class="sidebar-nav-link">Sistema de Permissões</a>
+                    </li>
+                    <li class="sidebar-nav-item">
+                        <a href="auditoria.html" class="sidebar-nav-link">Auditoria e Rastreabilidade</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3>Concorrência</h3>
+                <ul class="sidebar-nav">
+                    <li class="sidebar-nav-item">
+                        <a href="async.html" class="sidebar-nav-link">Programação Assíncrona</a>
+                    </li>
+                    <li class="sidebar-nav-item">
+                        <a href="transacoes.html" class="sidebar-nav-link">Transações Atômicas</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3>Biblioteca Padrão</h3>
+                <ul class="sidebar-nav">
+                    <li class="sidebar-nav-item">
+                        <a href="paciente.html" class="sidebar-nav-link">Módulo Paciente</a>
+                    </li>
+                    <li class="sidebar-nav-item">
+                        <a href="medicacao.html" class="sidebar-nav-link">Módulo Medicação</a>
+                    </li>
+                    <li class="sidebar-nav-item">
+                        <a href="prontuario.html" class="sidebar-nav-link">Módulo Prontuário</a>
+                    </li>
+                    <li class="sidebar-nav-item">
+                        <a href="hospital.html" class="sidebar-nav-link">Módulo Hospital</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3>Ferramentas</h3>
+                <ul class="sidebar-nav">
+                    <li class="sidebar-nav-item">
+                        <a href="compilador.html" class="sidebar-nav-link">Compilador Charcot</a>
+                    </li>
+                    <li class="sidebar-nav-item">
+                        <a href="repl.html" class="sidebar-nav-link">REPL Médico</a>
+                    </li>
+                    <li class="sidebar-nav-item">
+                        <a href="gerenciador-pacotes.html" class="sidebar-nav-link">Gerenciador de Pacotes</a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+        
+        <main class="content">
+            <h2 id="introducao">Introdução à Linguagem Charcot</h2>
+            
+            <p>Bem-vindo à documentação oficial da linguagem Charcot, a primeira linguagem de programação projetada especificamente para o desenvolvimento de aplicações médicas. Esta documentação serve como guia completo para aprender e utilizar a linguagem Charcot de forma eficiente.</p>
+            
+            <div class="alert alert-info">
+                <strong>Nota:</strong> Charcot está atualmente na versão 0.1.0 (Preview). Algumas características podem mudar antes da versão estável 1.0.
+            </div>
+            
+            <h3>Por que Charcot?</h3>
+            
+            <p>O desenvolvimento de software médico é um campo com desafios únicos. Os sistemas de saúde exigem alto nível de segurança, conformidade regulatória, integração com padrões médicos e capacidade de modelar fluxos de trabalho complexos do ambiente hospitalar. Embora linguagens de programação tradicionais possam ser usadas para desenvolver aplicações médicas, nenhuma delas foi projetada especificamente para este propósito.</p>
+            
+            <p>Charcot preenche esta lacuna oferecendo:</p>
+            
+            <ul>
+                <li><strong>Segurança no núcleo da linguagem:</strong> Detecta erros relacionados à medicina em tempo de compilação</li>
+                <li><strong>Sintaxe intuitiva:</strong> Familiar a desenvolvedores Python, mas com os benefícios do Rust</li>
+                <li><strong>Padrões médicos nativos:</strong> FHIR, HL7, SNOMED CT e outros integrados à biblioteca padrão</li>
+                <li><strong>Primitivas específicas:</strong> Tipos e funções para workflows hospitalares comuns</li>
+                <li><strong>Segurança e auditoria:</strong> Rastreabilidade de todas as operações para compliance regulatória</li>
+            </ul>
+            
+            <h3>Um Exemplo Inicial</h3>
+            
+            <p>Vamos ver um exemplo básico de código Charcot que calcula o Índice de Massa Corporal (IMC) de um paciente:</p>
+            
+            <div class="codeblock-header">calculadora_imc.chc</div>
+            <pre><code><span class="comment">// Calculadora de IMC em Charcot</span>
+<span class="keyword">usar</span> paciente::dados_antropometricos;
+
+<span class="comment">// Função que calcula o IMC</span>
+<span class="keyword">func</span> <span class="function">calcular_imc</span>(peso_kg: <span class="type">Decimal</span>, altura_m: <span class="type">Decimal</span>) -> <span class="type">Resultado</span>&lt;<span class="type">Decimal</span>&gt; {
+    <span class="comment">// Validação de entrada</span>
+    <span class="keyword">se</span> peso_kg <= 0.0 {
+        <span class="keyword">retornar</span> <span class="type">Erro</span>(<span class="string">"Peso deve ser maior que zero"</span>);
+    }
+    
+    <span class="keyword">se</span> altura_m <= 0.0 {
+        <span class="keyword">retornar</span> <span class="type">Erro</span>(<span class="string">"Altura deve ser maior que zero"</span>);
+    }
+    
+    <span class="comment">// Cálculo do IMC: peso (kg) / altura² (m)</span>
+    <span class="keyword">let</span> imc = peso_kg / (altura_m * altura_m);
+    
+    <span class="comment">// Arredondar para uma casa decimal</span>
+    <span class="type">Ok</span>(arredondar(imc, 1))
+}
+
+<span class="comment">// Função para classificar o IMC</span>
+<span class="keyword">func</span> <span class="function">classificar_imc</span>(imc: <span class="type">Decimal</span>) -> <span class="type">String</span> {
+    <span class="keyword">match</span> imc {
+        < 18.5 => <span class="string">"Baixo peso"</span>,
+        < 25.0 => <span class="string">"Peso normal"</span>,
+        < 30.0 => <span class="string">"Sobrepeso"</span>,
+        < 35.0 => <span class="string">"Obesidade grau I"</span>,
+        < 40.0 => <span class="string">"Obesidade grau II"</span>,
+        _ => <span class="string">"Obesidade grau III"</span>,
+    }
+}
+
+<span class="comment">// Função principal</span>
+<span class="keyword">func</span> <span class="function">principal</span>() {
+    <span class="keyword">let</span> paciente = <span class="type">Paciente</span>::buscar(<span class="string">"12345"</span>);
+    
+    <span class="comment">// Usar tipos com unidades</span>
+    <span class="keyword">let</span> peso = paciente.peso(); <span class="comment">// Tipo: Peso (kg)</span>
+    <span class="keyword">let</span> altura = paciente.altura(); <span class="comment">// Tipo: Altura (m)</span>
+    
+    <span class="keyword">match</span> calcular_imc(peso.valor(), altura.valor()) {
+        <span class="type">Ok</span>(imc) => {
+            <span class="keyword">let</span> classificacao = classificar_imc(imc);
+            imprimir(f<span class="string">"Paciente: {paciente.nome_completo()}"</span>);
+            imprimir(f<span class="string">"IMC: {imc} - Classificação: {classificacao}"</span>);
+        },
+        <span class="type">Erro</span>(e) => {
+            imprimir(f<span class="string">"Erro ao calcular IMC: {e}"</span>);
+        }
+    }
+}</code></pre>
+            
+            <p>Este simples exemplo já demonstra várias características importantes de Charcot:</p>
+            
+            <ul>
+                <li><strong>Verificação de entradas:</strong> Validação explícita de entradas para prevenir cálculos inválidos</li>
+                <li><strong>Tratamento de erros:</strong> Uso do tipo <code>Resultado</code> para representar operações que podem falhar</li>
+                <li><strong>Pattern matching:</strong> Utilização de <code>match</code> para classificação concisa</li>
+                <li><strong>Interpolação de strings:</strong> Formatação de strings com valores de variáveis</li>
+                <li><strong>Integração com conceitos médicos:</strong> Acesso a dados de pacientes de forma natural</li>
+            </ul>
+            
+            <p>Em versões mais avançadas deste exemplo, poderíamos utilizar tipos específicos da medicina com validação integrada, como:</p>
+            
+            <div class="codeblock-header">calculadora_imc_avancada.chc</div>
+            <pre><code><span class="keyword">usar</span> paciente::dados_antropometricos;
+<span class="keyword">usar</span> medidas::antropometria;
+
+<span class="comment">// Tipos com verificação integrada</span>
+<span class="keyword">tipo</span> <span class="type">Peso</span> = <span class="type">Decimal</span>&lt;0.1..635.0, <span class="string">"kg"</span>&gt;; <span class="comment">// Intervalo válido com unidade</span>
+<span class="keyword">tipo</span> <span class="type">Altura</span> = <span class="type">Decimal</span>&lt;0.3..2.5, <span class="string">"m"</span>&gt;;
+<span class="keyword">tipo</span> <span class="type">IMC</span> = <span class="type">Decimal</span>&lt;10.0..70.0, <span class="string">"kg/m²"</span>&gt;;
+
+<span class="comment">// Enumeração para classificação</span>
+<span class="keyword">enum</span> <span class="type">ClassificacaoIMC</span> {
+    BaixoPeso,
+    PesoNormal,
+    Sobrepeso,
+    Obesidade1,
+    Obesidade2,
+    Obesidade3,
+}
+
+<span class="comment">// Função com tipos validados</span>
+<span class="keyword">func</span> <span class="function">calcular_imc</span>(peso: <span class="type">Peso</span>, altura: <span class="type">Altura</span>) -> <span class="type">IMC</span> {
+    <span class="comment">// Não é mais necessário validar entradas - o sistema de tipos garante valores válidos</span>
+    <span class="keyword">let</span> imc_valor = peso.valor() / (altura.valor() * altura.valor());
+    <span class="type">IMC</span>::novo(arredondar(imc_valor, 1))
+}
+
+<span class="comment">// Classificação com segurança de tipos</span>
+<span class="keyword">func</span> <span class="function">classificar_imc</span>(imc: <span class="type">IMC</span>) -> <span class="type">ClassificacaoIMC</span> {
+    <span class="keyword">match</span> imc.valor() {
+        < 18.5 => <span class="type">ClassificacaoIMC</span>::BaixoPeso,
+        < 25.0 => <span class="type">ClassificacaoIMC</span>::PesoNormal,
+        < 30.0 => <span class="type">ClassificacaoIMC</span>::Sobrepeso,
+        < 35.0 => <span class="type">ClassificacaoIMC</span>::Obesidade1,
+        < 40.0 => <span class="type">ClassificacaoIMC</span>::Obesidade2,
+        _ => <span class="type">ClassificacaoIMC</span>::Obesidade3,
+    }
+}</code></pre>
+            
+            <h3>Para quem é Charcot?</h3>
+            
+            <p>Charcot foi criada pensando em diversos perfis de usuários:</p>
+            
+            <ul>
+                <li><strong>Desenvolvedores</strong> que trabalham em software médico</li>
+                <li><strong>Profissionais de saúde</strong> com experiência em programação</li>
+                <li><strong>Estudantes</strong> de informática médica e bioinformática</li>
+                <li><strong>Equipes de TI</strong> em hospitais e clínicas</li>
+                <li><strong>Empresas</strong> que desenvolvem sistemas de saúde</li>
+            </ul>
+            
+            <h3>Filosofia de Design</h3>
+            
+            <p>Charcot é guiada pelos seguintes princípios:</p>
+            
+            <ol>
+                <li><strong>Segurança acima de tudo</strong> - Prevenir erros em tempo de compilação é sempre preferível à detecção em tempo de execução</li>
+                <li><strong>Expressividade do domínio</strong> - O código deve refletir naturalmente conceitos médicos</li>
+                <li><strong>Verificabilidade</strong> - O comportamento do programa deve ser verificável e auditável</li>
+                <li><strong>Performance</strong> - Em ambientes críticos, a eficiência importa</li>
+                <li><strong>Interoperabilidade</strong> - Integração nativa com padrões médicos estabelecidos</li>
+            </ol>
+            
+            <div class="alert alert-warning">
+                <strong>Importante:</strong> Charcot não pretende substituir sistemas de apoio à decisão clínica ou diagnósticos médicos. É uma ferramenta para desenvolver software que auxilia profissionais de saúde, mas a decisão final sempre deve ser tomada por um profissional qualificado.
+            </div>
+            
+            <h3>Casos de Uso Principais</h3>
+            
+            <p>Charcot é especialmente adequada para:</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tipo de Aplicação</th>
+                        <th>Características</th>
+                        <th>Benefícios da Linguagem</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Sistemas de Prescrição Eletrônica</td>
+                        <td>Gerenciamento de prescrições médicas, verificação de doses e interações</td>
+                        <td>Verificação estática de interações medicamentosas, validação de dosagens</td>
+                    </tr>
+                    <tr>
+                        <td>Prontuário Eletrônico (EHR)</td>
+                        <td>Armazenamento e gestão de informações clínicas de pacientes</td>
+                        <td>Integração com FHIR, verificação de permissões, auditoria</td>
+                    </tr>
+                    <tr>
+                        <td>Sistemas de Apoio à Decisão Clínica</td>
+                        <td>Auxiliar diagnósticos e tratamentos baseados em evidências</td>
+                        <td>Modelagem de protocolos clínicos, integração com terminologias médicas</td>
+                    </tr>
+                    <tr>
+                        <td>Monitoramento de Pacientes</td>
+                        <td>Acompanhamento de sinais vitais e alertas em tempo real</td>
+                        <td>Programação assíncrona segura, tipos para sinais vitais com validação</td>
+                    </tr>
+                    <tr>
+                        <td>Gestão Hospitalar</td>
+                        <td>Gerenciamento de leitos, internações e alta de pacientes</td>
+                        <td>Primitivas para workflows hospitalares, transações atômicas</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Comparação com Outras Linguagens</h3>
+            
+            <p>Como Charcot se compara com linguagens populares usadas no desenvolvimento médico:</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Característica</th>
+                        <th>Charcot</th>
+                        <th>Python</th>
+                        <th>Java</th>
+                        <th>JavaScript</th>
+                        <th>Rust</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Segurança em Compilação</td>
+                        <td>Alta (específica para medicina)</td>
+                        <td>Baixa</td>
+                        <td>Média</td>
+                        <td>Baixa</td>
+                        <td>Alta (genérica)</td>
+                    </tr>
+                    <tr>
+                        <td>Expressividade para Conceitos Médicos</td>
+                        <td>Alta</td>
+                        <td>Média</td>
+                        <td>Média</td>
+                        <td>Baixa</td>
+                        <td>Média</td>
+                    </tr>
+                    <tr>
+                        <td>Facilidade de Aprendizado</td>
+                        <td>Média</td>
+                        <td>Alta</td>
+                        <td>Média</td>
+                        <td>Alta</td>
+                        <td>Baixa</td>
+                    </tr>
+                    <tr>
+                        <td>Performance</td>
+                        <td>Alta</td>
+                        <td>Baixa</td>
+                        <td>Média</td>
+                        <td>Média</td>
+                        <td>Alta</td>
+                    </tr>
+                    <tr>
+                        <td>Integração Nativa com FHIR</td>
+                        <td>Sim</td>
+                        <td>Via biblioteca</td>
+                        <td>Via biblioteca</td>
+                        <td>Via biblioteca</td>
+                        <td>Via biblioteca</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Próximos Passos</h3>
+            
+            <p>Para começar a utilizar Charcot, recomendamos seguir esta sequência:</p>
+            
+            <ol>
+                <li>Siga o <a href="instalacao.html">guia de instalação</a> para configurar o ambiente de desenvolvimento</li>
+                <li>Complete o <a href="primeiros-passos.html">tutorial de primeiros passos</a> para criar seu primeiro programa</li>
+                <li>Explore os <a href="exemplos.html">exemplos práticos</a> de aplicações médicas</li>
+                <li>Aprofunde-se no <a href="tipos-medicos.html">sistema de tipos médicos</a></li>
+                <li>Participe da <a href="comunidade.html">comunidade</a> para obter ajuda e compartilhar conhecimento</li>
+            </ol>
+            
+            <div class="pagination">
+                <div>
+                    <a href
